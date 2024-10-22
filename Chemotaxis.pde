@@ -61,11 +61,11 @@ void setup() {
 
 void draw() {
   background(bg); 
-  fill(bg+200);
+  fill(184, 227, 193);
   stroke(0);
-  rect(5,445,50,50);
-  fill(237,1289,46);
-  rect(445,5,50,50);
+  ellipse(35,465,50,50);
+  fill(227, 188, 184);
+  ellipse(465,35,50,50);
  
   if (a % 2 == 0) {
     stroke(0);  
