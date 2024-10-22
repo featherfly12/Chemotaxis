@@ -15,8 +15,31 @@ class Walker {
   }
 
   void walk() {
-    myX = myX + (int)(Math.random() * 6 - 3);
-    myY = myY + (int)(Math.random() * 6 - 3);
+    if (mouseX>myX){
+      myX = myX + (int)(Math.random() *5 - 1);
+    }
+    else{
+      myX = myX + (int)(Math.random() * 5 -3);
+    }
+    if (mouseY>myY){
+      myY = myY + (int)(Math.random() * 5 - 1);
+    }
+    else{
+      myY = myY + (int)(Math.random() * 5 -3);
+    }
+    
+    if (myX<50 && myY>445){
+      fill(0,255,0);
+      stroke(0);
+      textSize(60);
+      text("You're winning!", 30,250);
+    }
+    if (myY<50 && myX>445){
+      fill(255,0,0);
+      stroke(0);
+      textSize(60);
+      text("You're losing :(", 30,250);
+    }
   }
 
   void show() {
@@ -37,14 +60,19 @@ void setup() {
 }
 
 void draw() {
-  background(bg);  
-  
+  background(bg); 
+  fill(bg+200);
+  stroke(0);
+  rect(5,445,50,50);
+  fill(237,1289,46);
+  rect(445,5,50,50);
+ 
   if (a % 2 == 0) {
-    stroke(0);   
-    fill(255);   
+    stroke(0);  
+    fill(255);  
   } else {
-    stroke(255); 
-    fill(0);     
+    stroke(255);
+    fill(0);    
   }
 
   for (int i = 0; i < ohio.length; i++) {
